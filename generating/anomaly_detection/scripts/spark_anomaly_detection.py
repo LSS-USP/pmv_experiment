@@ -24,15 +24,13 @@ else:
 
 
 def load_thresholds():
-    df = spark.read.format("csv")\
-            .option("header", "true")\
-            .load(model_path)
+    df = spark.read.format("csv").option("header", "true").load(model_path)
     thresholds = {}
     model = df.rdd.collect()
     for u in model:
         thresholds[int(u["edgeId"])] = [float(u["lower_threshold"]), float(u["upper_threshold"])]
-    print(thresholds)
     return thresholds
+
 
 def build_kafka_stream(topic):
     return spark.readStream.format('kafka')\
@@ -41,6 +39,7 @@ def build_kafka_stream(topic):
             .option('failOnDataLoss', False)\
             .load()\
             .selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
+
 
 def mount_json_extraction(cols):
     json_objects = []
@@ -54,8 +53,9 @@ def mountValue(edgeId):
 
 
 if __name__ == '__main__':
+    print("Loading model...")
     thresholds = load_thresholds()
-    print("Model loading completed!")
+    print("Model loading completed...")
 
     stream = build_kafka_stream('data_stream')
 
@@ -64,7 +64,6 @@ if __name__ == '__main__':
     def checkAnomaly(edge_id, avg_speed):
         bounds = thresholds.get(int(edge_id), None)
         if (bounds == None):
-            print("Edge não encontrada =>", edge_id)
             return False
 
         if (float(avg_speed) < bounds[0]):
