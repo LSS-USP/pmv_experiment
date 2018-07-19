@@ -9,7 +9,7 @@ services:
       MASTER: spark://master:7077
       SPARK_CONF_DIR: /conf
       SPARK_PUBLIC_DNS: localhost
-      EXPERIMENT_SCENARIO: VALIDATION
+      EXPERIMENT_SCENARIO: CITY_SCALE
     expose:
       - 7001
       - 7002
@@ -71,7 +71,7 @@ services:
 
   hadoop:
     container_name: "hadoop"
-    image: "dylanguedes/hex_model_extended"
+    image: "dylanguedes/hadoop_model"
     ports:
       - "8020:8020"
       - "50070:50070"

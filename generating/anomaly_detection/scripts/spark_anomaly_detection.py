@@ -2,16 +2,31 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, from_json, udf, get_json_object, array, collect_list
 from pyspark.sql.types import *
 import json
+import os
 
 
 spark = SparkSession.builder.getOrCreate()
 spark.sparkContext.setLogLevel("ERROR")
 
+experiment_to_run = os.getenv("EXPERIMENT_SCENARIO")
+
+if (experiment_to_run == "VALIDATION"):
+    model_path = "hdfs://hadoop:9000/hex_model_extended.csv"
+elif (experiment_to_run == "CITY_SCALE"):
+    model_path = "hdfs://hadoop:9000/traffic_model.csv"
+else:
+    raise Exception("""
+        To use this script, you should override the
+        EXPERIMENT_SCENARIO environment variable with
+        values "VALIDATION" or "CITY_SCALE"; i.e:
+        $ export EXPERIMENT_SCENARIO=VALIDATION
+    """)
+
 
 def load_thresholds():
     df = spark.read.format("csv")\
             .option("header", "true")\
-            .load("hdfs://hadoop:9000/traffic_model.csv")
+            .load(model_path)
     thresholds = {}
     model = df.rdd.collect()
     for u in model:
