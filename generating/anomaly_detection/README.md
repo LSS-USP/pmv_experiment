@@ -1,0 +1,39 @@
+# Anomaly Detection System
+
+To run the anomaly detection system you should run the correct model for the
+desired scenario and then run detection system itself.
+
+## Running the Validation Experiment
+
+To run our validation experiment you should:
+
+1. Have a Python 3.6 environment with the packages listed in
+`dependencies/requirements.txt` file. To install the packages, run:
+
+```
+$ pip3.6 install -r dependencies/requirements
+```
+
+2. Have our anomaly detection Docker containers running. Run:
+
+```
+$ docker-compose -f validation-docker-compose.yml up -d
+```
+
+3. Run our script that converts RabbitMQ data to Kafka:
+
+```
+$ python3 rabbitmq_to_kafka.py
+```
+
+4. Run our script that converts Kafka data to RabbitMQ:
+
+```
+$ python3 kafka_to_rabbitmq.py
+```
+
+5. Run the anomaly detection:
+
+```
+$ docker exec -it master detect_anomalies
+```
