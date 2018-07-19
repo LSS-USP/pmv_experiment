@@ -23,13 +23,13 @@ $ docker-compose -f validation-docker-compose.yml up -d
 3. Run our script that converts RabbitMQ data to Kafka:
 
 ```
-$ python3 rabbitmq_to_kafka.py
+$ python3 scripts/rabbitmq_to_kafka.py
 ```
 
 4. Run our script that converts Kafka data to RabbitMQ:
 
 ```
-$ python3 kafka_to_rabbitmq.py
+$ python3 scripts/kafka_to_rabbitmq.py
 ```
 
 5. Run the anomaly detection:
