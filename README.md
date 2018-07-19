@@ -64,3 +64,6 @@ can be find using the identifier **1_1**, ended in the edge identified by
 **20** (check the map input of the experiment), has duration **8** (so it
 started in tick **47**) and, in total, is composed of **3** edges.
 
+## Generating the rounds (running simulations)
+
+See the `README.md` in the `generating` folder.
