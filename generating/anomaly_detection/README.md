@@ -1,7 +1,9 @@
 # Anomaly Detection System
 
 To run the anomaly detection system you should run the correct model for the
-desired scenario and then run detection system itself.
+desired scenario and then run detection system itself. We recommend starting
+from the last section (Troubleshooting) before attempting to run the
+anomaly detection.
 
 ## Running the Validation Experiment
 
@@ -127,4 +129,44 @@ $ python3 scripts/kafka_to_rabbitmq.py
 
 ```
 $ docker exec -it master detect_anomalies
+```
+
+## Troubleshooting
+
+In this section we present a few common problems and how to solve them.
+
+### Hadoop in Safe Mode
+
+From time to time, after starting the hadoop container, theres a chance of
+occurring the following error:
+
+```
+org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot create file/metadata. Name node is in safe mode.                         
+The reported blocks 231 has reached the threshold 0.9990 of total blocks 231. The number of live datanodes 1 has reached the minimum numbe
+r 0. In safe mode extension. Safe mode will be turned off automatically in 8 seconds.                                                     
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1327)                              
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.startFileInt(FSNamesystem.java:2424)                                       
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.startFile(FSNamesystem.java:2312)                                          
+        at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.create(NameNodeRpcServer.java:622)                                            at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.create(ClientNamenodeProtocolServerSideTranslatorPB.java:397)
+```
+
+It means that you Hadoop just started and its name nodes are still in safe mode.
+To fix it you can just wait or:
+
+1. Enter in the hadoop container:
+
+```
+$ docker exec -it hadoop /bin/bash
+```
+
+2. Enter in the hadoop folder:
+
+```
+$ cd $HADOOP_PREFIX
+```
+
+3. Run the following command:
+
+```
+$ ./bin/hdfs dfsadmin -safemode leave
 ```
