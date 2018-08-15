@@ -45,13 +45,6 @@ This folder holds everything needed to reproduce the simulation and the scenario
 There you will find a `README.md` file that better describes the steps needed
 to rerun the scenarios.
 
-#### `utils` folder
-
-This folder holds useful scripts that you might find useful if you want to reproduce
-everything that we used. For instance, here you can find a Jupyter Notebook that
-generates the `map.xml` file used by the simulator in the second scenario of the
-experiment.
-
 #### scenario_1_validation
 
 This folder holds the results of the first scenario simulated. In the
@@ -71,6 +64,13 @@ aggregates the results of the 20 rounds simulated, and a `rounds` folder, which
 stores the results of each of these rounds. In `scenario_2_sao_paulo/inputs` you
 will find the inputs used by the simulator for this scenario, where the `map.xml`
 is the map used.
+
+#### `utils` folder
+
+This folder holds useful scripts that you might find useful if you want to reproduce
+everything that we used. For instance, here you can find a Jupyter Notebook that
+generates the `map.xml` file used by the simulator in the second scenario of the
+experiment.
 
 #### Data Analysis
 
