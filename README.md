@@ -72,29 +72,11 @@ if you want to reproduce everything that we used. For instance, here you can fin
 a Jupyter Notebook that generates the `map.xml` file used by the simulator in the
 second scenario of the experiment.
 
-#### Data Analysis
+## Experiment Analysis
 
-Our complete data analysis can be found in the `Analysis.ipynb` file. You can open
+Our complete data analysis can be found in the `Analysis.ipynb` Jupyter Notebook
+file. You can open
 the file using Github itself to see our results and analysis or, to reproduce the
 results, you can open it with Jupyter Notebook and rerun the cells (we recommend
 reading this whole file before trying to run it). Also, if you have any questions,
 you can contact us in IRC (freenode#ccsl-usp).
-
-For the **Validation scenario** you should check the
-``scenario_1_validation`` folder, where in the ``validation/datasets`` folder you can
-find the three datasets used in the analysis (one per scenario) and in the
-``validation/inputs`` folder you can find the inputs used by our scrips.
-
-For the **São Paulo scenario** you should
-check the ``scenario_2_sao_paulo`` folder, where in the ``scenario_2_sao_paulo/datasets``
-folder you can find the three datasets generated.
-
-In the datasets folders you will find a folder for each phase of the experiment
-
-```
-cat round_{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}.csv >> ../output
-```
-
-The `Analysis.ipynb` file will correctly use the `output.csv` files generated
-and everything will be fine. In the ``city_scale/inputs`` folder you can find
-the inputs used by the simulator and the Spark Scripts.
