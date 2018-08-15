@@ -50,27 +50,27 @@ to rerun the scenarios.
 This folder holds the results of the first scenario simulated. In the
 `scenario_1_validation/datasets` folder you will find three folders, one for each
 phase of the scenario, and in each of these folders, an `output.csv` file, which
-aggregates the results of the 20 rounds simulated, and a `rounds` folder, which
-stores the results of each of these rounds. In `scenario_1_validation/inputs` you
-will find the inputs used by the simulator for this scenario, where the `hex_map.xml`
-is the map used.
+aggregates the results of the 20 rounds simulated. Also, in each of these
+datasets folder there is a `rounds` folder, that
+stores the results of each round. In `scenario_1_validation/inputs` you
+will find the inputs used by the simulator for this scenario.
 
 #### `scenario_2_sao_paulo` folder
 
 This folder holds the results of the second scenario simulated. In the
 `scenario_2_sao_paulo/datasets` folder you will find three folders, one for each
 phase of the scenario, and in each of these folders, an `output.csv` file, which
-aggregates the results of the 20 rounds simulated, and a `rounds` folder, which
-stores the results of each of these rounds. In `scenario_2_sao_paulo/inputs` you
-will find the inputs used by the simulator for this scenario, where the `map.xml`
-is the map used.
+aggregates the results of the 20 rounds simulated. Also, in each of these
+datasetss folder there is a `rounds` folder, that
+stores the results of each round. In `scenario_2_sao_paulo/inputs` you
+will find the inputs used by the simulator for this scenario.
 
 #### `utils` folder
 
-This folder holds useful scripts that you might find useful if you want to reproduce
-everything that we used. For instance, here you can find a Jupyter Notebook that
-generates the `map.xml` file used by the simulator in the second scenario of the
-experiment.
+This folder holds useful scripts and Jupyter Notebook that you might find useful
+if you want to reproduce everything that we used. For instance, here you can find
+a Jupyter Notebook that generates the `map.xml` file used by the simulator in the
+second scenario of the experiment.
 
 #### Data Analysis
 
