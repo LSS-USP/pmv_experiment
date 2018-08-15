@@ -33,12 +33,17 @@ simulation **with events and with traffic boards**, were we used a small anomaly
 detection system (written in Apache Spark) to trigger the traffic boards.
 
 Next, we describe the structure of this repository, which will help
-you to understand how to rerun the whole thing.
+you to understand and reproduce the results.
+
+#### `img` folder
+
+This folder holds the images used in our Jupyter Notebooks. You can skip it! :)
 
 #### `running` folder
 
-This folder holds everything needed to rerun the simulation and the scenarios.
-There you will find a `README.md` file better describing how to rerun the experiment.
+This folder holds everything needed to reproduce the simulation and the scenarios.
+There you will find a `README.md` file that better describes the steps needed
+to rerun the scenarios.
 
 #### `utils` folder
 
