@@ -45,7 +45,7 @@ This folder holds everything needed to reproduce the simulation and the scenario
 There you will find a `README.md` file that better describes the steps needed
 to rerun the scenarios.
 
-#### scenario_1_validation
+#### `scenario_1_validation` folder
 
 This folder holds the results of the first scenario simulated. In the
 `scenario_1_validation/datasets` folder you will find three folders, one for each
@@ -55,7 +55,7 @@ stores the results of each of these rounds. In `scenario_1_validation/inputs` yo
 will find the inputs used by the simulator for this scenario, where the `hex_map.xml`
 is the map used.
 
-#### scenario_2_sao_paulo
+#### `scenario_2_sao_paulo` folder
 
 This folder holds the results of the second scenario simulated. In the
 `scenario_2_sao_paulo/datasets` folder you will find three folders, one for each
