@@ -1,4 +1,0 @@
-#!/bin/bash
-export PATH="$PATH:/root/bin"
-pip3 install -r /dependencies/requirements
-bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
