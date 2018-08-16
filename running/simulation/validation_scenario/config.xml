@@ -1,0 +1,9 @@
+<scsimulator_config>
+
+<!-- Uncomment line below to run the scenario without traffic events -->
+<!--<config trip_file="../input/trips.csv" map_file="../input/map.xml" output_file="../output/events.xml" simulation_time="1800"/>-->
+
+<!-- Uncomment line below to run the scenario with traffic events -->
+<config trip_file="../input/trips.csv" map_file="../input/map.xml" events_file="../input/events.csv" output_file="../output/events.xml" simulation_time="300"/>
+
+</scsimulator_config>

@@ -1,0 +1,11 @@
+version: '3'
+services:
+    simulator:
+        image: kanashiro/interscsimulator:stable-1.0
+        environment:
+            - RABBITMQ_HOST=<IP_ADREESS>
+        network_mode: "host"
+        tty: true
+        volumes:
+            - ./interscsimulator_output:/interscsimulator/mock-simulators/smart_city_model/output
+            - ./validation_scenario:/interscsimulator/mock-simulators/smart_city_model/input
